@@ -35,6 +35,14 @@ function App() {
     setTodos(updatedTodos)
   }
 
+  const deleteTodo = (todoId) => {
+    const deletedTodos = todos.filter((todo) => {
+      return todo.id !==todoId
+    })
+
+    setTodos(deletedTodos)
+  }
+
   return (
     <>
       <div style={styles.container}>
@@ -42,6 +50,7 @@ function App() {
         <Todos 
           todos={todos}
           toggleCompleted = {toggleCompleted}
+          deleteTodo = {deleteTodo}
         />
       </div>
     </>
